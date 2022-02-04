@@ -1,6 +1,6 @@
-// demonstrate the use of a simple TEXTWATCHER control
-//Three methods are needed to satisfy the TextWatcher interface
-
+/* demonstrate the use of simple TextWatcher listeners on a widget.
+Three methods are needed to satisfy the TextWatcher interface.
+*/
 package com.course.example.textwatcher;
 
 import android.app.Activity;
@@ -25,20 +25,25 @@ public class TextWatcherDemo extends Activity  {
         // add listener to EditText widget for text changes       
         txtInput.addTextChangedListener(new TextWatcher() {
         	String msg;
+			//called notify that somewhere within the widget the text has been changed.
 			public void afterTextChanged(Editable s) {
-				msg = "count: " + txtInput.getText().toString().length()
-				    + " " + s.toString();
+				msg = "string length: " + txtInput.getText().toString().length()
+				    + ", updated string: " + s.toString();
 				txtMsg.setText( msg );				
 			}
 
+			//called to notify that within the widget the count characters beginning at start
+			// are about to be replaced by new text with length after.
 			public void beforeTextChanged(CharSequence s, int start,
 					int count, int after) {	
-			//	Toast.makeText(getApplicationContext(), "BTC " + s, Toast.LENGTH_LONG).show();
+		//		Toast.makeText(TextWatcherDemo.this, "BEFORE " + s, Toast.LENGTH_LONG).show();
 			}
 
+			//called to notify that within s the count characters beginning at start
+			// have just replaced old text that had length before.
 			public void onTextChanged(CharSequence s, int start, int before,
 					int count) {
-			//	Toast.makeText(getApplicationContext(), "OTC " + s, Toast.LENGTH_LONG).show();
+		//		Toast.makeText(TextWatcherDemo.this, "ON " + s, Toast.LENGTH_LONG).show();
 				
 			}
         	
