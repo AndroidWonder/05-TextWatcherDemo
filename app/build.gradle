@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 android {
-    compileSdkVersion 32
-    buildToolsVersion '32.0.0'
+    compileSdk 33
+    buildToolsVersion '33.0.1'
 
     defaultConfig {
         applicationId "com.course.example.textwatcher"
         minSdkVersion 26
-        targetSdkVersion 32
+        targetSdkVersion 33
     }
 
     buildTypes {
@@ -15,6 +15,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+
 }
 
 dependencies {
