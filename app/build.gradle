@@ -1,9 +1,9 @@
 apply plugin: 'com.android.application'
 android {
-    compileSdk 33
-    buildToolsVersion '33.0.1'
+
 
     defaultConfig {
+        compileSdk 33
         applicationId "com.course.example.textwatcher"
         minSdkVersion 26
         targetSdkVersion 33
